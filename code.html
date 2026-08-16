@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseEase — Secure Trip History</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="code.css" />
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>ExpenseEase</h1>
+            <p>Track. Split. Settle. Repeat. 🚀</p>
+        </header>
+
+        <!-- Current Trip Creator -->
+        <div class="card">
+            <input type="text" id="trip-name" class="trip-header-input" placeholder="Give this adventure a name...">
+            
+            <div class="input-group">
+                <input type="text" id="desc" placeholder="What's the expense? (e.g. Fuel)">
+                <div class="row">
+                    <input type="text" id="payer" placeholder="Who paid?">
+                    <input type="number" id="amount" placeholder="Amount ($)">
+                </div>
+                <button id="add-expense" class="btn-primary">Add Expense</button>
+            </div>
+
+            <div id="expense-list"></div>
+            
+            <div id="settle-section" style="display:none">
+                <div class="settlement-card">
+                    <h4 style="color:var(--accent); margin-bottom:12px">Current Settlement Plan</h4>
+                    <div id="settlement-list"></div>
+                </div>
+                <button id="save-trip" class="btn-primary" style="background: var(--ink); color: white;">Save Trip to Archive</button>
+            </div>
+        </div>
+
+        <!-- Trip History (Simulated SQL/Local Storage) -->
+        <div id="history-section">
+            <h2 id="history-title" style="display:none">Previous Adventures</h2>
+            <div id="history-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
